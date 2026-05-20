@@ -1,0 +1,1749 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shivam Saxena — Head of Visual Production</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Raleway:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ivory: #f5f1ea;
+        --ivory2: #ede8df;
+        --ivory3: #e4ded3;
+        --charcoal: #1c1916;
+        --charcoal2: #2e2b27;
+        --bronze: #8b6f47;
+        --bronze-lt: #a8865b;
+        --warm: #171411;
+        --muted: #000;
+        --border: rgba(139, 111, 71, 0.2);
+        --border2: rgba(139, 111, 71, 0.1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--ivory);
+        color: var(--charcoal);
+        font-family: "Raleway", sans-serif;
+        font-weight: 300;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        padding: 28px 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border2);
+      }
+      .nav-brand {
+        font-family: "Playfair Display", serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        color: var(--charcoal);
+        text-transform: uppercase;
+      }
+      .nav-links {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--bronze);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-left {
+        padding: 160px 72px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 48px;
+        opacity: 0;
+        animation: fadeUp 0.7s ease 0.2s forwards;
+      }
+      .hero-tag-line {
+        width: 48px;
+        height: 1px;
+        background: var(--bronze);
+      }
+      .hero-tag-text {
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--bronze);
+        font-weight: 600;
+      }
+
+      .hero-name {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(60px, 8.5vw, 120px);
+        font-weight: 400;
+        line-height: 0.9;
+        color: var(--charcoal);
+        margin-bottom: 10px;
+        opacity: 0;
+        animation: fadeUp 0.9s ease 0.4s forwards;
+      }
+      .hero-name em {
+        display: block;
+        font-style: italic;
+        color: var(--bronze);
+      }
+
+      .hero-subtitle {
+        font-size: clamp(12px, 1.4vw, 15px);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 300;
+        margin-bottom: 56px;
+        opacity: 0;
+        animation: fadeUp 0.8s ease 0.6s forwards;
+      }
+
+      .hero-bio {
+        max-width: 420px;
+        margin-bottom: 52px;
+        opacity: 0;
+        animation: fadeUp 0.8s ease 0.8s forwards;
+      }
+      .hero-bio p {
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--warm);
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeUp 0.8s ease 1s forwards;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--charcoal);
+        color: var(--ivory);
+        text-decoration: none;
+        padding: 15px 36px;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+      .btn-primary:hover {
+        background: var(--bronze);
+        transform: translateY(-2px);
+      }
+
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--border);
+        color: var(--charcoal);
+        text-decoration: none;
+        padding: 15px 36px;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 400;
+        transition: all 0.3s;
+      }
+      .btn-ghost:hover {
+        border-color: var(--bronze);
+        color: var(--bronze);
+      }
+
+      .hero-right {
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+    url("Shivam.png");
+
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 64px;
+}
+
+      .hero-right-deco {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 241, 234, 0.06);
+        animation: breathe 6s ease-in-out infinite;
+      }
+      .hero-right-deco::before {
+        content: "";
+        position: absolute;
+        inset: 50px;
+        border-radius: 50%;
+        border: 1px solid rgba(139, 111, 71, 0.15);
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.04);
+        }
+      }
+
+      .hero-right-label {
+        font-size: 9px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: rgb(245, 241, 234);
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        animation: fadeUp 0.8s ease 1.1s forwards;
+      }
+
+      .hero-stats-v {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        animation: fadeUp 0.8s ease 1.2s forwards;
+      }
+      .stat-row {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid rgba(245, 241, 234, 0.08);
+      }
+      .stat-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 52px;
+        font-weight: 400;
+        color: var(--ivory);
+        line-height: 1;
+      }
+      .stat-info {
+      }
+      .stat-label {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: rgb(245, 241, 234);
+        margin-bottom: 4px;
+      }
+      .stat-detail {
+        font-size: 16px;
+        color: var(--bronze-lt);
+        font-style: italic;
+        font-family: "Playfair Display", serif;
+        font-weight: 800;
+      }
+
+      .hero-right-name {
+        position: absolute;
+        top: 72px;
+        left: 64px;
+        font-size: 9px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: rgb(245, 241, 234);
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 110px 72px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--bronze);
+        margin-bottom: 52px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .eyebrow::after {
+        content: "";
+        width: 36px;
+        height: 1px;
+        background: var(--bronze);
+      }
+
+      .heading {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 400;
+        color: var(--charcoal);
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+
+      /* ── DIVIDER ── */
+      .rule {
+        height: 1px;
+        background: var(--ivory3);
+        margin: 0;
+      }
+
+      /* ── EXPERIENCE ── */
+      .experience {
+        background: var(--ivory);
+      }
+
+      .exp-item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 0 80px;
+        padding: 56px 0;
+        border-bottom: 1px solid var(--border2);
+        position: relative;
+        transition: all 0.3s;
+      }
+      .exp-item:first-child {
+        border-top: 1px solid var(--border2);
+      }
+
+      .exp-item::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background: var(--bronze);
+        transition: width 0.5s ease;
+      }
+      .exp-item:hover::after {
+        width: 100%;
+      }
+
+      .exp-num {
+        font-family: "Playfair Display", serif;
+        font-size: 11px;
+        font-style: italic;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+      .exp-period {
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: var(--bronze);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .exp-co {
+        font-size: 20px;
+        color: var(--muted);
+        line-height: 1.5;
+        font-weight: 800;
+      }
+
+      .exp-role {
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: var(--charcoal);
+        margin-bottom: 20px;
+        line-height: 1.15;
+      }
+      .exp-desc {
+        font-size: 14px;
+        line-height: 1.85;
+        color: var(--warm);
+        max-width: 660px;
+        margin-bottom: 24px;
+      }
+      .exp-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        border: 1px solid var(--border);
+        padding: 5px 14px;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--bronze);
+        transition: all 0.3s;
+      }
+      .tag:hover {
+        background: var(--bronze);
+        color: var(--ivory);
+      }
+
+      /* ── PORTFOLIO ── */
+      .portfolio {
+        background: var(--ivory2);
+      }
+
+      .tabs {
+        display: flex;
+        gap: 0;
+        border-bottom: 1px solid var(--border2);
+        margin-bottom: 52px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab-btn {
+        background: none;
+        border: none;
+        font-family: "Raleway", sans-serif;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--muted);
+        padding: 0 28px 18px;
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+        transition: color 0.3s;
+        flex-shrink: 0;
+      }
+      .tab-btn.active {
+        color: var(--bronze);
+      }
+      .tab-btn.active::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--bronze);
+      }
+
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 14px;
+      }
+
+      .p-card {
+        display: block;
+        text-decoration: none;
+        background: var(--ivory);
+        border: 1px solid var(--border2);
+        padding: 32px 28px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s;
+        color: var(--charcoal);
+      }
+      .p-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--bronze);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+      .p-card:hover {
+        border-color: var(--border);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(28, 25, 22, 0.08);
+      }
+      .p-card:hover::before {
+        transform: scaleX(1);
+      }
+      .p-arrow {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 18px;
+        color: var(--bronze);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .p-card:hover .p-arrow {
+        opacity: 1;
+      }
+      .p-platform {
+        font-size: 9px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--bronze);
+        margin-bottom: 14px;
+      }
+      .p-title {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        color: var(--charcoal);
+        line-height: 1.3;
+        margin-bottom: 8px;
+      }
+      .p-sub {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* ── SKILLS ── */
+      .skills {
+        background: var(--charcoal);
+      }
+      .skills .eyebrow {
+        color: var(--bronze-lt);
+      }
+      .skills .eyebrow::after {
+        background: var(--bronze-lt);
+      }
+      .skills .heading {
+        color: var(--ivory);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        margin-top: 12px;
+      }
+      .group-label {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-style: italic;
+        color: var(--ivory);
+        margin-bottom: 28px;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .pill {
+        border: 1px solid rgba(245, 241, 234, 0.12);
+        padding: 9px 18px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: rgba(245, 241, 234, 0.6);
+        transition: all 0.3s;
+      }
+      .pill:hover {
+        background: rgba(139, 111, 71, 0.15);
+        color: var(--bronze-lt);
+        border-color: var(--bronze);
+      }
+
+      /* ── CLIENTS ── */
+      .clients {
+        background: var(--ivory3);
+        text-align: center;
+      }
+      .client-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px 80px;
+        margin-top: 64px;
+      }
+      .client-name {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--muted);
+        transition: color 0.3s;
+      }
+      .client-name:hover {
+        color: var(--bronze);
+      }
+
+      /* ── EDUCATION ── */
+      .education {
+        background: var(--ivory);
+      }
+      .edu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 12px;
+      }
+      .edu-card {
+        border-top: 2px solid var(--bronze);
+        padding: 32px 0 0;
+        background: transparent;
+      }
+      .edu-deg {
+        font-family: "Playfair Display", serif;
+        font-size: 21px;
+        color: var(--charcoal);
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+      .edu-inst {
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--bronze);
+        margin-bottom: 8px;
+      }
+      .edu-year {
+        font-size: 10px;
+        color: var(--muted);
+        letter-spacing: 2px;
+      }
+
+      /* ── ABOUT STRIP ── */
+      .about-strip {
+        background: var(--charcoal2);
+        padding: 80px 72px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 60px;
+      }
+      .about-item-label {
+        font-size: 9px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--bronze-lt);
+        margin-bottom: 16px;
+      }
+      .about-item-val {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        color: var(--ivory);
+        line-height: 1.4;
+      }
+
+      /* ── CONTACT ── */
+      .contact {
+        background: var(--ivory);
+        padding: 130px 72px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+      }
+      .contact-left h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(48px, 7vw, 90px);
+        font-weight: 400;
+        color: var(--charcoal);
+        line-height: 0.95;
+        margin-bottom: 40px;
+      }
+      .contact-left h2 em {
+        font-style: italic;
+        color: var(--bronze);
+      }
+
+      .wa-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--charcoal);
+        color: var(--ivory);
+        text-decoration: none;
+        padding: 18px 40px;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 24px;
+        transition: all 0.3s;
+        font-family: "Raleway", sans-serif;
+      }
+      .wa-btn:hover {
+        background: var(--bronze);
+        transform: translateY(-2px);
+      }
+
+      .contact-links {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .contact-link-btn {
+        border: 1px solid var(--border);
+        color: var(--charcoal);
+        text-decoration: none;
+        padding: 12px 28px;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+      }
+      .contact-link-btn:hover {
+        border-color: var(--bronze);
+        color: var(--bronze);
+      }
+
+      .contact-right {
+      }
+      .contact-detail {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--border2);
+      }
+      .contact-detail:first-child {
+        border-top: 1px solid var(--border2);
+      }
+      .contact-detail-label {
+        font-size: 9px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--bronze);
+        margin-bottom: 8px;
+      }
+      .contact-detail-val {
+        font-size: 14px;
+        color: var(--warm);
+      }
+      .contact-detail-val a {
+        color: var(--warm);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .contact-detail-val a:hover {
+        color: var(--bronze);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--charcoal);
+        padding: 28px 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(245, 241, 234, 0.05);
+      }
+      .foot-name {
+        font-family: "Playfair Display", serif;
+        font-size: 13px;
+        font-style: italic;
+        color: rgb(245, 241, 234);
+        letter-spacing: 2px;
+      }
+      .foot-links {
+        display: flex;
+        gap: 28px;
+      }
+      .foot-links a {
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgb(245, 241, 234);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .foot-links a:hover {
+        color: var(--bronze-lt);
+      }
+
+      /* ── REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.d1 {
+        transition-delay: 0.1s;
+      }
+      .reveal.d2 {
+        transition-delay: 0.2s;
+      }
+      .reveal.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        nav {
+          padding: 20px 24px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          min-height: 340px;
+          padding: 40px 24px;
+        }
+        .hero-right-name {
+          display: none;
+        }
+        .hero-stats-v {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0;
+        }
+        .stat-row {
+          flex-direction: column;
+          gap: 4px;
+          padding: 16px 24px 16px 0;
+          border-bottom: none;
+        }
+        section {
+          padding: 72px 24px;
+        }
+        .about-strip {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          padding: 60px 24px;
+        }
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+          gap: 52px;
+          padding: 80px 24px;
+        }
+        footer {
+          flex-direction: column;
+          gap: 18px;
+          text-align: center;
+        }
+        .hero-left {
+          padding: 120px 24px 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-brand">Shivam Saxena</div>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Works</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <div class="hero-tag-line"></div>
+          <span class="hero-tag-text"
+            >Delhi, India · 10 Years of Visual Excellence</span
+          >
+        </div>
+        <h1 class="hero-name">Shivam<br /><em>Saxena</em></h1>
+        <p class="hero-subtitle">Head of Visual Production</p>
+        <div class="hero-bio">
+          <p>
+            "I don't edit footage — I architect emotion. Every frame is a
+            deliberate decision, every cut a heartbeat. My work lives at the
+            intersection of storytelling and strategy, where visual language
+            becomes the loudest voice in the room."
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a
+            href="https://wa.me/917982975843?text=Hi%20Shivam%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!"
+            target="_blank"
+            rel="noopener"
+            class="btn-primary"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            Let's Get in Touch
+          </a>
+          <a
+            href="https://www.behance.net/shivamsaxena12"
+            target="_blank"
+            rel="noopener"
+            class="btn-ghost"
+            >View Portfolio</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-right">
+  <div class="hero-right-name">Shivam Saxena · Visual Production</div>
+  <div class="hero-right-deco"></div>
+  <p class="hero-right-label">By the numbers</p>
+        <div class="hero-stats-v">
+          <div class="stat-row">
+            <div class="stat-num">330K</div>
+            <div class="stat-info">
+              <div class="stat-label">Instagram Audience Built</div>
+              <div class="stat-detail">From 12K — organic growth</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-num">150K</div>
+            <div class="stat-info">
+              <div class="stat-label">YouTube Subscribers</div>
+              <div class="stat-detail">From 80K — Adventures Overland</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-num">10+</div>
+            <div class="stat-info">
+              <div class="stat-label">Years of Experience</div>
+              <div class="stat-detail">Broadcast · Brand · Film</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <div class="about-strip">
+      <div>
+        <div class="about-item-label">Creative Identity</div>
+        <div class="about-item-val">
+          Director · Editor · Storyteller · Music Producer · Lyricist
+        </div>
+      </div>
+      <div>
+        <div class="about-item-label">Languages</div>
+        <div class="about-item-val">Hindi · English · Punjabi</div>
+      </div>
+      <div>
+        <div class="about-item-label">Available For</div>
+        <div class="about-item-val">
+          Creative Direction · Visual Production · Brand Films · Freelance
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="eyebrow reveal">Career</div>
+      <h2 class="heading reveal">A Decade of<br />Purposeful Creation</h2>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-num">01</div>
+          <div class="exp-period">2022 — Present</div>
+          <div class="exp-co">Adventures Overland<br />Gurugram</div>
+        </div>
+        <div>
+          <div class="exp-role">Head of Visual Production</div>
+          <p class="exp-desc">
+            Spearheaded the complete visual transformation of a premium road
+            expedition brand. Architected a full-stack content strategy spanning
+            cinematic travel films, Meta ad creatives, brand campaigns, and
+            website visual identity — scaling Instagram from 12K to 330K and
+            YouTube from 80K to 150K. Led the in-house production team across
+            every stage of pre and post-production. Collaborated with the Indian
+            Army on the Spiti Marathon campaign and directed content featuring
+            celebrity influencer Karan Kundra's Iceland expedition.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Team Leadership</span>
+            <span class="tag">12K → 330K IG</span>
+            <span class="tag">Meta Ad Films</span>
+            <span class="tag">Creative Strategy</span>
+            <span class="tag">Indian Army Collab</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-num">02</div>
+          <div class="exp-period">2020 — 2022</div>
+          <div class="exp-co">Sai Corporation<br />Delhi</div>
+        </div>
+        <div>
+          <div class="exp-role">Senior Motion &amp; Video Designer</div>
+          <p class="exp-desc">
+            Delivered high-calibre motion and static creatives for FMCG and
+            lifestyle brands including Garnier, Nivea, L'Oréal, The Man Company,
+            and Kelyn Naturals. Managed end-to-end visual production for video
+            advertisements and A+ e-commerce content, maintaining brand
+            precision at scale across digital platforms.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Garnier</span><span class="tag">L'Oréal</span
+            ><span class="tag">Nivea</span> <span class="tag">E-commerce</span
+            ><span class="tag">Motion Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-num">03</div>
+          <div class="exp-period">2017 — 2020</div>
+          <div class="exp-co">Hans Studio<br />Gurugram</div>
+        </div>
+        <div>
+          <div class="exp-role">Video Editor</div>
+          <p class="exp-desc">
+            Core editor for multiple ZEE Entertainment broadcast channels — ZEE
+            TV, ZEE Bangla, ZEE Punjabi, and ZEE News. Operated under
+            high-pressure broadcast deadlines delivering daily soap edits,
+            creative promos, and event-ready broadcast packages, forging a sharp
+            instinct for narrative pacing and broadcast-grade quality.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">ZEE TV</span><span class="tag">ZEE Bangla</span>
+            <span class="tag">ZEE Punjabi</span
+            ><span class="tag">ZEE News</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-num">04</div>
+          <div class="exp-period">2016 — 2017</div>
+          <div class="exp-co">Upstox / RKSV Securities<br />Noida</div>
+        </div>
+        <div>
+          <div class="exp-role">Motion Graphic Designer</div>
+          <p class="exp-desc">
+            Solely responsible for all motion output at a high-growth fintech
+            brand. Designed and animated flat-style explainer and tutorial
+            videos for YouTube and their SSP platform, translating complex
+            financial concepts into clean, engaging visual stories.
+          </p>
+          <div class="exp-tags">
+            <span class="tag">Fintech</span
+            ><span class="tag">Explainer Videos</span>
+            <span class="tag">Flat Animation</span
+            ><span class="tag">YouTube</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+      <div class="eyebrow reveal">Selected Works</div>
+      <h2 class="heading reveal">The Work<br />Speaks for Itself</h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="tab(event, 'yt')">
+          YouTube Films
+        </button>
+        <button class="tab-btn" onclick="tab(event, 'reels')">
+          Instagram Reels
+        </button>
+        <button class="tab-btn" onclick="tab(event, 'static')">
+          Static Design
+        </button>
+        <button class="tab-btn" onclick="tab(event, 'behance')">Behance</button>
+      </div>
+
+      <!-- YouTube -->
+      <div class="tab-panel active" id="p-yt">
+        <a
+          href="https://youtu.be/06t1eIOUcjU"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">YouTube · Cinematic Film</div>
+          <div class="p-title">Expedition Film I</div>
+          <div class="p-sub">
+            Full-length cinematic road expedition documentary
+          </div></a
+        >
+        <a
+          href="https://youtu.be/QtRsya8VozM"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">YouTube · Cinematic Film</div>
+          <div class="p-title">Expedition Film II</div>
+          <div class="p-sub">Cinematic travel production & story edit</div></a
+        >
+        <a
+          href="https://youtu.be/KbHaxhoXTKM"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">YouTube · Cinematic Film</div>
+          <div class="p-title">Expedition Film III</div>
+          <div class="p-sub">Visual storytelling through raw landscape</div></a
+        >
+        <a
+          href="https://youtu.be/KQoccXHSFZE"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">YouTube · Cinematic Film</div>
+          <div class="p-title">Expedition Film IV</div>
+          <div class="p-sub">Brand narrative — motion, music & emotion</div></a
+        >
+        <a
+          href="https://youtu.be/8MyYfp1Lleg"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">YouTube · Cinematic Film</div>
+          <div class="p-title">Expedition Film V</div>
+          <div class="p-sub">Cinema-grade colour & production</div></a
+        >
+      </div>
+
+      <!-- Reels -->
+      <div class="tab-panel" id="p-reels">
+        <a
+          href="https://www.instagram.com/reel/DYZoGvcPgxt/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 01</div>
+          <div class="p-sub">Cinematic short-form content</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DXix9gCDz8q/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 02</div>
+          <div class="p-sub">Travel & expedition reel</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DXRgnGJj8JO/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 03</div>
+          <div class="p-sub">Cinematic short-form content</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DWtlDNlD-Sh/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 04</div>
+          <div class="p-sub">Brand visual storytelling</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DUQkP7YD0NA/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 05</div>
+          <div class="p-sub">Cinematic short-form content</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DTc3f2ND3e5/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 06</div>
+          <div class="p-sub">Motion & creative edit</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DSxNQQqj6C2/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 07</div>
+          <div class="p-sub">Cinematic travel short</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DScisnajzNj/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 08</div>
+          <div class="p-sub">Brand content reel</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DScUFIKDwVl/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 09</div>
+          <div class="p-sub">Motion creative reel</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DRrgciej7V3/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 10</div>
+          <div class="p-sub">Cinematic short-form content</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DRXBfRZD-JA/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 11</div>
+          <div class="p-sub">Expedition visual reel</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DMssJsTP32p/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 12</div>
+          <div class="p-sub">Creative brand motion</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DLH0WfbPR5R/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 13</div>
+          <div class="p-sub">Travel storytelling reel</div></a
+        >
+        <a
+          href="https://www.instagram.com/reel/DITp2uEPcmq/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Instagram Reel</div>
+          <div class="p-title">Short Film 14</div>
+          <div class="p-sub">Cinematic expedition film</div></a
+        >
+      </div>
+
+      <!-- Static -->
+      <div class="tab-panel" id="p-static">
+        <a
+          href="https://www.instagram.com/p/DYFGD73j4yc/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 01</div>
+          <div class="p-sub">Travel brand graphic</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DXZbQQED9a8/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 02</div>
+          <div class="p-sub">Campaign creative</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DQ6tySBj6xy/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 03</div>
+          <div class="p-sub">Visual identity post</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DQMYKPcj3ur/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 04</div>
+          <div class="p-sub">Social media creative</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DN8K12ij7_L/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 05</div>
+          <div class="p-sub">Expedition campaign</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DM7ss-6PmdO/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 06</div>
+          <div class="p-sub">Lifestyle brand graphic</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DLCr9wuPAJZ/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 07</div>
+          <div class="p-sub">Creative campaign visual</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DHvmgjmvv5z/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 08</div>
+          <div class="p-sub">Travel visual creative</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DHBNtbNvIvo/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 09</div>
+          <div class="p-sub">Editorial post design</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DEPlihOPVlO/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 10</div>
+          <div class="p-sub">Brand campaign</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DEFSpURPmVA/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 11</div>
+          <div class="p-sub">Motion to static design</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DECv5CSCXpg/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 12</div>
+          <div class="p-sub">Campaign visual</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/DBqwI8wTo0R/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 13</div>
+          <div class="p-sub">Brand identity design</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/C_xupAmTR-0/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 14</div>
+          <div class="p-sub">Social creative campaign</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/C-pwfF7Sg5P/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 15</div>
+          <div class="p-sub">Visual storytelling post</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/C-xmWrMyOe2/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 16</div>
+          <div class="p-sub">Brand campaign post</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/C63bfzCS76i/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 17</div>
+          <div class="p-sub">Creative graphic</div></a
+        >
+        <a
+          href="https://www.instagram.com/p/C6d2ubGSdPx/"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          ><span class="p-arrow">↗</span>
+          <div class="p-platform">Static Design</div>
+          <div class="p-title">Brand Post 18</div>
+          <div class="p-sub">Campaign visual design</div></a
+        >
+      </div>
+
+      <!-- Behance -->
+      <div class="tab-panel" id="p-behance">
+        <a
+          href="https://www.behance.net/shivamsaxena12"
+          target="_blank"
+          rel="noopener"
+          class="p-card"
+          style="max-width: 400px"
+        >
+          <span class="p-arrow">↗</span>
+          <div class="p-platform">Behance · Full Design Portfolio</div>
+          <div class="p-title">Motion, Brand &amp; Graphic Design</div>
+          <div class="p-sub">
+            View the complete collection of design work, motion projects, and
+            brand campaigns
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <div class="eyebrow reveal">Expertise</div>
+      <h2 class="heading reveal">
+        Tools of the<br /><em
+          style="font-style: italic; color: var(--bronze-lt)"
+          >Auteur</em
+        >
+      </h2>
+      <div class="skills-grid">
+        <div class="reveal d1">
+          <div class="group-label">Post Production &amp; Motion</div>
+          <div class="pills">
+            <span class="pill">Adobe Premiere Pro</span>
+            <span class="pill">After Effects</span>
+            <span class="pill">DaVinci Resolve</span>
+            <span class="pill">Adobe Photoshop</span>
+            <span class="pill">Adobe Illustrator</span>
+            <span class="pill">Autodesk Maya</span>
+            <span class="pill">FL Studio</span>
+          </div>
+        </div>
+        <div class="reveal d2">
+          <div class="group-label">Direction &amp; Strategy</div>
+          <div class="pills">
+            <span class="pill">Team Leadership</span>
+            <span class="pill">Creative Direction</span>
+            <span class="pill">Content Strategy</span>
+            <span class="pill">Shoot Planning</span>
+            <span class="pill">Pre &amp; Post Production</span>
+            <span class="pill">AI Visual Tools</span>
+            <span class="pill">Music Production</span>
+            <span class="pill">Lyricism</span>
+            <span class="pill">Brand Storytelling</span>
+            <span class="pill">Meta Ad Production</span>
+            <span class="pill">Colour Grading</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="clients" id="clients">
+      <div class="eyebrow reveal" style="justify-content: center">
+        Notable Collaborations
+      </div>
+      <h2 class="heading reveal" style="text-align: center">
+        Trusted by brands<br /><em
+          style="font-style: italic; color: var(--bronze)"
+          >that matter</em
+        >
+      </h2>
+      <div class="client-grid reveal">
+        <span class="client-name">Garnier</span>
+        <span class="client-name">L'Oréal</span>
+        <span class="client-name">Nivea</span>
+        <span class="client-name">Apollo Tyres</span>
+        <span class="client-name">Indian Army</span>
+        <span class="client-name">The Man Company</span>
+        <span class="client-name">ZEE Entertainment</span>
+        <span class="client-name">Upstox</span>
+        <span class="client-name">Karan Kundra</span>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education">
+      <div class="eyebrow reveal">Education</div>
+      <h2 class="heading reveal">Academic Foundation</h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal d1">
+          <div class="edu-deg">Master of Business Administration</div>
+          <div class="edu-inst">MBA — Strategy &amp; Management</div>
+          <div class="edu-year">Highest Academic Qualification</div>
+        </div>
+        <div class="edu-card reveal d2">
+          <div class="edu-deg">B.A. Programme</div>
+          <div class="edu-inst">Delhi University</div>
+          <div class="edu-year">2016 — 2019</div>
+        </div>
+        <div class="edu-card reveal d1">
+          <div class="edu-deg">Diploma in Visual Production</div>
+          <div class="edu-inst">
+            Asian Academy of Film &amp; Television, Noida
+          </div>
+          <div class="edu-year">1-Year Intensive Programme</div>
+        </div>
+        <div class="edu-card reveal d2">
+          <div class="edu-deg">Video Production</div>
+          <div class="edu-inst">Marwah Studios</div>
+          <div class="edu-year">2015 — 2016</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-left">
+        <h2 class="reveal">Let's build<br />something <em>iconic.</em></h2>
+        <a
+          href="https://wa.me/917982975843?text=Hi%20Shivam%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!"
+          target="_blank"
+          rel="noopener"
+          class="wa-btn reveal"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          Let's Get in Touch
+        </a>
+        <div class="contact-links reveal">
+          <a
+            href="https://www.linkedin.com/in/shivam-saxena-84b720186"
+            target="_blank"
+            rel="noopener"
+            class="contact-link-btn"
+            >LinkedIn</a
+          >
+          <a
+            href="https://www.behance.net/shivamsaxena12"
+            target="_blank"
+            rel="noopener"
+            class="contact-link-btn"
+            >Behance</a
+          >
+          <a href="mailto:shivamsaxena8588@gmail.com" class="contact-link-btn"
+            >Email</a
+          >
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <div class="contact-detail">
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-val">
+            <a href="mailto:shivamsaxena8588@gmail.com"
+              >shivamsaxena8588@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-val">
+            <a href="tel:+917982975843">+91 79829 75843</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-label">Location</div>
+          <div class="contact-detail-val">Delhi, India</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-label">Languages</div>
+          <div class="contact-detail-val">Hindi · English · Punjabi</div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-label">Available For</div>
+          <div class="contact-detail-val">
+            Full-time · Freelance · Consulting
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="foot-name">Shivam Saxena — Head of Visual Production</div>
+      <div class="foot-links">
+        <a href="mailto:shivamsaxena8588@gmail.com">Email</a>
+        <a
+          href="https://www.linkedin.com/in/shivam-saxena-84b720186"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://www.behance.net/shivamsaxena12" target="_blank"
+          >Behance</a
+        >
+        <a href="https://wa.me/917982975843" target="_blank">WhatsApp</a>
+      </div>
+    </footer>
+
+    <script>
+      function tab(e, id) {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+        document.getElementById("p-" + id).classList.add("active");
+      }
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) en.target.classList.add("on");
+          });
+        },
+        { threshold: 0.08 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
